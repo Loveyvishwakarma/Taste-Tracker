@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Taste Tracker</div>
+        <div class="nav-links">
+            <a href="#" class="active" data-page="home">Home</a>
+            <a href="#" data-page="scan">Scan</a>
+            <a href="#" data-page="recipe">Recipe</a>
+            <a href="#" data-page="alert">Alert</a>
+        </div>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    </nav>
+
+    <main>
+        <div id="home" class="page active">
+            <h1>Welcome to Taste Tracker</h1>
+            <div class="food-list">
+                <!-- Food items will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="scan" class="page">
+            <h2>Scan Food Item</h2>
+            <div class="scan-container">
+                <div class="camera-container">
+                    <video id="camera" autoplay playsinline></video>
+                </div>
+                <div class="scan-controls">
+                    <button id="captureBtn">Capture</button>
+                    <button id="uploadBtn">Upload Image</button>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                </div>
+                <div class="manual-input">
+                    <h3>Manual Input</h3>
+                    <form id="foodForm">
+                        <input type="text" id="foodName" placeholder="Food Name" required>
+                        <input type="date" id="expiryDate" required>
+                        <button type="submit">Add Food</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="recipe" class="page">
+            <h2>Recipe Recommendations</h2>
+            <div class="recipe-container">
+                <div class="ingredients-list">
+                    <!-- Available ingredients will be listed here -->
+                </div>
+                <div class="recipe-results">
+                    <!-- Recipe recommendations will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="alert" class="page">
+            <h2>Expiry Alerts</h2>
+            <div class="alerts-container">
+                <!-- Expiring items will be listed here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/recipes.js"></script>
+    <script src="js/alerts.js"></script>
+</body>
+</html> 
